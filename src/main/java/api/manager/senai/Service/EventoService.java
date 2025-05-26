@@ -71,8 +71,7 @@ public class EventoService {
         }
         e.getParticipantes().add(u);
         u.getEventos().add(e);
-        e.setVagas(e.getVagas() - 1);
-        eventoRepo.save(e);
+
     }
 
     @Transactional
