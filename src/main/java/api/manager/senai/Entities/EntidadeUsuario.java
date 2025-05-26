@@ -1,6 +1,7 @@
 package api.manager.senai.Entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -17,7 +18,7 @@ public class EntidadeUsuario {
     private String nome;
     private String telefone;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "participantes")
     private Set<EntidadeEvento> eventos;
 
     public EntidadeUsuario() {
