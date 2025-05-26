@@ -1,6 +1,6 @@
 # 📅 EventManagerAPI
 
-Repositório do sistema **EventManagerAPI**, um projeto desenvolvido para gerenciar **eventos corporativos de funcionários**, com funcionalidades completas de CRUD para eventos e controle de inscrições de participantes.
+Repositório do sistema **EventManagerAPI**, um projeto desenvolvido para gerenciar **eventos corporativos **, com funcionalidades completas de CRUD para eventos e controle de inscrições de eventos.
 
 🔗 Acesse o repositório: [github.com/JoaoNascimento1802/EventManagerAPI](https://github.com/JoaoNascimento1802/EventManagerAPI)
 
