@@ -3,6 +3,8 @@ package api.manager.senai.Entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_eventos")
@@ -14,6 +16,14 @@ public class EntidadeEvento {
     private String nome;
     private LocalDate data;
     private int vagas;
+
+    @ManyToMany
+    @JoinTable(
+            name = "tb_evento_participante",
+            joinColumns = @JoinColumn(name = "evento_id"),
+            inverseJoinColumns = @JoinColumn(name =  "participante_id")
+    )
+    private Set<EntidadeUsuario> participantes = new HashSet<>();
 
     public EntidadeEvento() {
     }

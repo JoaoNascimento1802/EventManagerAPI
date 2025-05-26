@@ -3,6 +3,9 @@ package api.manager.senai.Entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table( name = "tb_usuarios")
 public class EntidadeUsuario {
@@ -13,6 +16,9 @@ public class EntidadeUsuario {
     private String email;
     private String nome;
     private String telefone;
+
+    @ManyToMany
+    private Set<EntidadeEvento> eventos;
 
     public EntidadeUsuario() {
     }
