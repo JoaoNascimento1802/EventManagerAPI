@@ -66,4 +66,13 @@ public class EntidadeEvento {
     public void setVagas(int vagas) {
         this.vagas = vagas;
     }
+
+
+    public Set<EntidadeUsuario> getParticipantes() {
+        return participantes;
+    }
+
+    public void setParticipantes(Set<EntidadeUsuario> participantes) {
+        this.participantes = participantes;
+    }
 }

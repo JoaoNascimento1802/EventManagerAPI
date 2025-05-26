@@ -62,4 +62,12 @@ public class EntidadeUsuario {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public Set<EntidadeEvento> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(Set<EntidadeEvento> eventos) {
+        this.eventos = eventos;
+    }
 }
