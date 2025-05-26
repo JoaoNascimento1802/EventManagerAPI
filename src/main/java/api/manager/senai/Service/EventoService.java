@@ -64,8 +64,15 @@ public class EventoService {
         if (e.getParticipantes().size() >= e.getVagas()) {
             throw new IllegalStateException("Sem vagas");
         }
+        for (EntidadeUsuario participante : e.getParticipantes()) {
+            if (participante.getId().equals(usuarioId)) {
+                throw new IllegalStateException("Usuário já inscrito no evento");
+            }
+        }
         e.getParticipantes().add(u);
         u.getEventos().add(e);
+        e.setVagas(e.getVagas() - 1);
+        eventoRepo.save(e);
     }
 
     @Transactional
