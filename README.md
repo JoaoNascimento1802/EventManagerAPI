@@ -1,51 +1,48 @@
-# 📅 EventManagerAPI - Lógica de Negócio e Serviços
+# 📅 EventManagerAPI - Organização e Documentação
 
-Este branch contém a implementação da lógica de negócio, incluindo DTOs, Repositórios e Serviços das entidades do projeto **EventManagerAPI**.
+Este branch organiza o repositório, documentação e integração da API com Swagger para facilitar o entendimento e uso do sistema.
 
 ## 👤 Responsável
 
-- Bernardo Oliveira – [@DevBernardo-Oliveira](https://github.com/DevBernardo-Oliveira)
+- Thiago Sampaio – [@Thiago-P-Sampaio](https://github.com/Thiago-P-Sampaio)
 
 ---
 
 ## ✅ Tarefas Realizadas
 
-- ✅ Criação dos `DTOs` para `Evento` e `Participante`
-- ✅ Criação dos `Repository` com Spring Data JPA
-- ✅ Implementação dos `Service` para gerenciamento de eventos e participantes
-- ✅ Lógica de inscrição em evento com verificação de vagas
-- ✅ Lógica para cancelamento de inscrição
-- ✅ Métodos para listar participantes por evento
+- ✅ Criação e atualização do `README.md` principal
+- ✅ Organização da estrutura do repositório no GitHub
+- ✅ Acompanhamento de commits e progresso da equipe
+- ✅ Integração com Swagger para documentação da API
 
 ---
 
 ## 🧰 Tecnologias Utilizadas
 
-- Java 21
-- Spring Boot
-- Spring Data JPA
-- Lombok
-- MySQL
+- Markdown (README)
+- Swagger / Springdoc OpenAPI
+- Git & GitHub
 
 ---
 
 ## ▶️ Como Executar
 
-1. Certifique-se de que as entidades estão criadas no projeto.
-2. Execute o projeto com:
+1. Execute o projeto localmente:
    ```bash
    ./mvnw spring-boot:run
    ```
 
+2. Acesse a documentação da API via Swagger:
+   ```
+   http://localhost:8080/swagger-ui.html
+   ```
+
 ---
 
-## 📄 Estrutura de Código Envolvida
+## 📄 Estrutura Envolvida
 
-- `dto/EventoDTO.java`
-- `dto/ParticipanteDTO.java`
-- `repository/EventoRepository.java`
-- `repository/ParticipanteRepository.java`
-- `service/EventoService.java`
-- `service/ParticipanteService.java`
+- `README.md`
+- `pom.xml` (dependência do Swagger)
+- `config/SwaggerConfig.java` (se houver configuração personalizada)
 
 ---
