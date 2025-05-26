@@ -1,48 +1,53 @@
 package api.manager.senai.Entities;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table( name = "tb_usuarios")
+@Table(name = "tb_usuarios")
 public class EntidadeUsuario {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private Long usuarioId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "usuario_id")
+    private Long id;
+
+    @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false)
     private String nome;
+
+    @Column
     private String telefone;
 
-    @ManyToMany(mappedBy = "participantes")
-    private Set<EntidadeEvento> eventos;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "participantes", fetch = FetchType.LAZY,
+                cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    private Set<EntidadeEvento> eventos = new HashSet<>();
 
-    public EntidadeUsuario() {
-    }
+    public EntidadeUsuario() { }
 
-    public EntidadeUsuario(Long usuarioId, String email, String nome, String telefone) {
-        this.usuarioId = usuarioId;
+    public EntidadeUsuario(Long id, String email, String nome, String telefone) {
+        this.id = id;
         this.email = email;
         this.nome = nome;
         this.telefone = telefone;
     }
 
-    public Long getUsuarioId() {
-        return usuarioId;
+    public Long getId() {
+        return id;
     }
 
-    public void setUsuarioId(Long usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -50,7 +55,6 @@ public class EntidadeUsuario {
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -58,7 +62,6 @@ public class EntidadeUsuario {
     public String getTelefone() {
         return telefone;
     }
-
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
@@ -66,7 +69,6 @@ public class EntidadeUsuario {
     public Set<EntidadeEvento> getEventos() {
         return eventos;
     }
-
     public void setEventos(Set<EntidadeEvento> eventos) {
         this.eventos = eventos;
     }
