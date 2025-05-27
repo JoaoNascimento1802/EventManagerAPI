@@ -1,56 +1,48 @@
-# 📅 EventManagerAPI - Configuração e Entidades
+# 📅 EventManagerAPI - Organização e Documentação
 
-Este branch contém a configuração inicial e as entidades principais do projeto **EventManagerAPI**, um sistema de gerenciamento de eventos para funcionários.
+Este branch organiza o repositório, documentação e integração da API com Swagger para facilitar o entendimento e uso do sistema.
 
 ## 👤 Responsável
 
-- João Nascimento – [@JoaoNascimento1802](https://github.com/JoaoNascimento1802)
+- João Emanuel – [@JoaoNascimento](https://github.com/JoaoNascimento1802)
 
 ---
 
 ## ✅ Tarefas Realizadas
 
-- ✅ Criação do projeto Spring Boot
-- ✅ Configuração inicial (`application.properties`, dependências, estrutura de pacotes)
-- ✅ Implementação da entidade `Evento`
-- ✅ Implementação da entidade `Participante`
-- ✅ Mapeamento de relacionamento entre entidades (`@ManyToMany` ou via tabela intermediária)
+- ✅ Criação e atualização do `README.md` principal
+- ✅ Organização da estrutura do repositório no GitHub
+- ✅ Acompanhamento de commits e progresso da equipe
+- ✅ Integração com Swagger para documentação da API
 
 ---
 
 ## 🧰 Tecnologias Utilizadas
 
-- Java 21
-- Spring Boot 3
-- Spring Data JPA
-- Lombok
-- MySQL
+- Markdown (README)
+- Swagger / Springdoc OpenAPI
+- Git & GitHub
 
 ---
 
 ## ▶️ Como Executar
 
-1. Configure o banco de dados MySQL no arquivo `application.properties`:
-   ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/eventos
-   spring.datasource.username=seu_usuario
-   spring.datasource.password=sua_senha
-   spring.jpa.hibernate.ddl-auto=update
-   ```
-
-2. Execute a aplicação com:
+1. Execute o projeto localmente:
    ```bash
    ./mvnw spring-boot:run
    ```
 
-Ou rode a classe `EventManagerApiApplication.java` pela sua IDE.
+2. Acesse a documentação da API via Swagger:
+   ```
+   http://localhost:8080/swagger-ui.html
+   ```
 
 ---
 
-## 🗂 Estrutura de Código Envolvida
+## 📄 Estrutura Envolvida
 
-- `model/Evento.java`
-- `model/Participante.java`
-- `resources/application.properties`
+- `README.md`
+- `pom.xml` (dependência do Swagger)
+- `config/SwaggerConfig.java` (se houver configuração personalizada)
 
 ---
