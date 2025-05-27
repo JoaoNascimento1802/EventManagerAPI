@@ -82,6 +82,7 @@ public class EventoService {
         u.getEventos().remove(e);
     }
 
+    @Transactional
     public List<UsuarioDTO> participantes(Long eventoId) {
         EntidadeEvento e = eventoRepo.findById(eventoId).orElseThrow();
         return e.getParticipantes().stream()
