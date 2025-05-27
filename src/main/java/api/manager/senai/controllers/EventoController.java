@@ -1,10 +1,8 @@
-
 package api.manager.senai.controllers;
 
 import api.manager.senai.DTO.EventoDTO;
 import api.manager.senai.DTO.UsuarioDTO;
 import api.manager.senai.Service.EventoService;
-import api.manager.senai.Service.UsuarioService;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +14,9 @@ import java.util.List;
 public class EventoController {
 
     private final EventoService eventoService;
-    private final UsuarioService usuarioService;
 
-    public EventoController(EventoService eventoService, UsuarioService usuarioService) {
+    public EventoController(EventoService eventoService) {
         this.eventoService = eventoService;
-        this.usuarioService = usuarioService;
     }
 
     @PostMapping
@@ -42,11 +38,6 @@ public class EventoController {
     public ResponseEntity<Void> excluirEvento(@PathVariable Long id) {
         eventoService.excluir(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @PostMapping("/usuarios")
-    public UsuarioDTO criarUsuario(@RequestBody UsuarioDTO dto) {
-        return usuarioService.criar(dto);
     }
 
     @PostMapping("/{eventoId}/inscrever/{usuarioId}")
